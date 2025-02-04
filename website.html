@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajwal Bhandari - Portfolio</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="keen-removebg-preview.png" type="image/x-icon">
+    <style>
+        /* Add this CSS for the sticky footer */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper {
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 2px 0; /* Shorten the footer size */
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px; /* Adjust font size if needed */
+        }
+        #home {
+            background-image: url('channels4_banner.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Ensure text is readable */
+            text-align: center;
+            padding: 100px 0; /* Adjust padding as needed */
+        }
+        #home h1, #home p {
+            margin: 0;
+        }
+        /* Chatbot styles */
+        #chatbot {
+            width: 400px; /* Increase the width of the chatbot */
+            height: 600px; /* Increase the height of the chatbot */
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Position the chatbot on the left side */
+            z-index: 1000; /* Ensure the chatbot is above other elements */
+        }
+        #chatbot-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #chatbot-input {
+            border: none;
+            padding: 10px;
+            width: calc(100% - 60px);
+            box-sizing: border-box;
+        }
+        #chatbot-send {
+            border: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #chatbot-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure the icon is above other elements */
+        }
+        #minimize-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Joke button*/
+        #joke-button {
+            z-index: 1000; /* Ensure the joke button is above other elements */
+            position: relative;
+        }
+        #delete-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        #delete-button:hover {
+            color: #f1f1f1;
+        }
+
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chatbot-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chatbot-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        #chatbot-input-area {
+            display: flex;
+            padding: 10px;
+        }
+
+        #chatbot-input {
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+
+        .message {
+            max-width: 80%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <!-- <li><a href="#jokes">Jokes</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Add a wrapper around the main content -->
+    <div class="content-wrapper">
+        <main>
+            <section id="home">
+                <h1></h1>
+            </section>
+
+            <section id="about">
+                <p class="centered-text">Web Developer | Designer | Creative Thinker | AI Enthusiast</p>
+                <h2>About Me</h2>
+                
+                <div class="about-content">
+                    <div class="profile-image-container">
+                        <img src="image.png" alt="Your Name" class="profile-image">
+                    </div>
+                    <div class="about-text">
+                        <p>Hello! I'm a passionate web developer with a keen eye for design and a love for creating intuitive, user-friendly websites. 
+                            I don't have any experience working with companies yet but am looking for internship to start new chapter of my life.</p>
+                        <p>My expertise includes front-end technologies like HTML, CSS, Python, Java as well as C. I'm always eager to learn new technologies and stay up-to-date with the latest web development trends.</p>
+                        <p>When I'm not coding, you can find me exploring new hiking trails, playing chess, watching chess, experimenting with new recipes in the kitchen, or exploring the contents of books.</p>
+                        <a href="CV Prajwal.docx" download class="cv-download-btn">Download CV</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>  
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Library Management System.</h3>
+                    <p>We used python's GUI "tkinter" to make a user friendly library management system 
+                    purpose. This project aims at making the task of library easy. It is a simple project that can be used by the librarian to maintain the records of the library.</p> 
+                    </p>
+                </div>
+                <div class="project">
+                    <h3>Chess</h3>
+                    <p>I made a chess game using tkinter. The user need to login inside the application.
+                        The login records are recorded in database using mysql.
+                    </p>
+                </div>
+                <div class="project">
+                    <h3>Soduko Solver</h3>
+                    <p>A soduko solver that can solve sudoku of dimensions 4x4 and 9x9.
+                        For this ppurpose, I used python.
+                    </p>
+                </div>
+            </section>
+
+            <!-- <section id="jokes">
+                <h2>Random Joke Generator</h2>
+                <div id="joke-container">
+                    <p id="joke-setup"></p>
+                    <p id="joke-punchline" style="display: none;"></p>
+                    <button id="joke-button">Get Joke</button>
+                </div>
+            </section>
+        -->
+
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>Email: keenalise199@gmail.com</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/">My LinkedIn Profile</a></p>
+                <p>GitHub: <a href="https://github.com/keenalise">My GitHub Profile</a></p>
+            </section>
+
+            <!-- Chatbot Section -->
+            <div id="chatbot-icon">💬</div>
+            <div id="chatbot" style="display: none;">
+                <div id="chatbot-header">
+                    Chat with us!
+                    <button id="minimize-button">-</button>
+                    <button id="delete-button">🗑️</button>
+                </div>
+                <div id="chatbot-messages"></div>
+                <div id="chatbot-input-area">
+                    <input type="text" id="chatbot-input" placeholder="Type a message...">
+                    <button id="chatbot-send">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Keen Alise. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle the minimize functionality
+        document.getElementById('chatbot-icon').addEventListener('click', function() {
+            document.getElementById('chatbot').style.display = 'flex';
+            document.getElementById('chatbot-icon').style.display = 'none';
+        });
+
+        document.getElementById('minimize-button').addEventListener('click', function() {
+            document.getElementById('chatbot').style.display = 'none';
+            document.getElementById('chatbot-icon').style.display = 'flex';
+        });
+
+        // Modify the event listener for the delete button
+        document.getElementById('delete-button').addEventListener('click', function() {
+            if (confirm("Are you sure you want to delete the entire conversation?")) {
+                document.getElementById('chatbot-messages').innerHTML = '';
+                document.getElementById('chatbot-input').value = ''; // Clear the input field as well
+            }
+        });
+
+        // Function to handle user input and generate bot response
+        function getBotResponse(message) {
+            message = message.toLowerCase();
+            
+            if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
+                return "Hello! I'm Vision, your personal assistant for Keen Alise's portfolio. How can I help you?";
+            } else if (message.includes("name")) {
+                return "The portfolio owner's name is Keen Alise.";
+            } else if (message.includes("about") || message.includes("who is keen alise")) {
+                return "Keen Alise is a passionate web developer with 2 years of experience. They specialize in creating intuitive, user-friendly websites and have a keen eye for design. Keen Alise is known for their problem-solving skills and ability to work well in team environments.";
+            } else if (message.includes("education") || message.includes("degree")) {
+                return "Keen Alise holds a Bachelor's degree in Computer Science from XYZ University, graduated in 2021.";
+            } else if (message.includes("skills") || message.includes("technologies")) {
+                return "Keen Alise's skills include:\n• Front-end: HTML, CSS, JavaScript, React\n• Back-end: Node.js, Express, Python\n• Databases: MongoDB, MySQL\n• Other: Git, RESTful APIs, Responsive Design";
+            } else if (message.includes("experience") || message.includes("work history")) {
+                return "Keen Alise has 2 years of professional experience, including:\n• Junior Web Developer at TechCorp (2021-2022)\n• Freelance Web Developer (2022-present)";
+            } else if (message.includes("project") || message.includes("portfolio")) {
+                return "Keen Alise has worked on several projects, including:\n1. E-commerce website for a local business\n2. Weather forecast app using React and OpenWeatherMap API\n3. Task management system with Node.js backend\nYou can find more details in the Projects section of the portfolio.";
+            } else if (message.includes("contact") || message.includes("email")) {
+                return "You can contact Keen Alise via email at keenalise199@gmail.com.";
+            } else if (message.includes("linkedin")) {
+                return "You can find Keen Alise's LinkedIn profile at: https://www.linkedin.com/in/prajwal-bhandari-389031324/";
+            } else if (message.includes("github")) {
+                return "You can find Keen Alise's GitHub profile at: https://github.com/keenalise";
+            } else if (message.includes("cv") || message.includes("resume")) {
+                return "You can download Keen Alise's CV from the About section of the portfolio. It includes a detailed work history and list of skills.";
+            } else if (message.includes("joke")) {
+                return "Keen Alise's portfolio includes a Random Joke Generator. You can find it in the Projects section of the website!";
+            } else if (message.includes("hobbies") || message.includes("interests")) {
+                return "Outside of coding, Keen Alise enjoys hiking, photography, and contributing to open-source projects.";
+            } else if (message.includes("languages")) {
+                return "Keen Alise is fluent in English, Nepali and Hindi .";
+            } else {
+                return "I'm sorry, but I couldn't find any information matching your query. Is there something else you'd like to know about Keen Alise or their portfolio?";
+            }
+        }
+
+        // Function to send message
+        function sendMessage() {
+            const userInput = document.getElementById('chatbot-input').value;
+            if (userInput.trim() !== "") {
+                addMessage('User', userInput);
+                document.getElementById('chatbot-input').value = "";
+                
+                setTimeout(() => {
+                    const botResponse = getBotResponse(userInput);
+                    addMessage('Bot', botResponse);
+                }, 1000);
+            }
+        }
+
+        // JavaScript to handle sending messages
+        document.getElementById('chatbot-send').addEventListener('click', sendMessage);
+
+        // Add event listener for the Enter key
+        document.getElementById('chatbot-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent default form submission
+                sendMessage();
+            }
+        });
+
+        // Modify the addMessage function
+        function addMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.classList.add('message');
+            messageElement.classList.add(sender === 'User' ? 'user-message' : 'bot-message');
+            document.getElementById('chatbot-messages').appendChild(messageElement);
+            document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight;
+        }
+
+        // JavaScript to handle the joke button functionality
+        document.getElementById('joke-button').addEventListener('click', function() {
+            const jokeSetup = document.getElementById('joke-setup');
+            const jokePunchline = document.getElementById('joke-punchline');
+            const jokeButton = document.getElementById('joke-button');
+
+            // Fetch a random joke from the API
+            fetch('https://official-joke-api.appspot.com/random_joke')
+                .then(response => response.json())
+                .then(data => {
+                    jokeSetup.textContent = data.setup;
+                    jokePunchline.textContent = data.punchline;
+                    jokePunchline.style.display = 'none';
+                    jokeButton.textContent = 'Show Punchline';
+                    
+                    jokeButton.onclick = function() {
+                        if (jokePunchline.style.display === 'none') {
+                            jokeButton.disabled = true;
+                            jokeButton.textContent = 'Wait for it...';
+                            
+                            // Add a 3-second delay before showing the punchline
+                            setTimeout(() => {
+                                jokePunchline.style.display = 'block';
+                                jokeButton.textContent = 'Get New Joke';
+                                jokeButton.disabled = false;
+                            }, 3000);
+                        } else {
+                            // Fetch a new joke when "Get New Joke" is clicked
+                            jokeSetup.textContent = 'Loading...';
+                            jokePunchline.style.display = 'none';
+                            jokeButton.onclick = null;
+                            document.getElementById('joke-button').click();
+                        }
+                    };
+                })
+                .catch(error => {
+                    jokeSetup.textContent = 'Failed to fetch joke. Please try again.';
+                    jokePunchline.style.display = 'none';
+                });
+        });
+    </script>
+</body>
+</html>
