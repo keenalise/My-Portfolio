@@ -269,9 +269,9 @@
 
             <section id="contact">
                 <h2>Contact Me</h2>
-                <p>Email: keenalise199@gmail.com</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/">My LinkedIn Profile</a></p>
-                <p>GitHub: <a href="https://github.com/keenalise">My GitHub Profile</a></p>
+                <p>Email: <a href="mailto:keenalise199@gmail.com" target="_blank">keenalise199@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank">My LinkedIn Profile</a></p>
+                <p>GitHub: <a href="https://github.com/keenalise" target="_blank">My GitHub Profile</a></p>
             </section>
 
             <!-- Chatbot Section -->
@@ -322,17 +322,17 @@
             if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
                 return "Hello! I'm Vision, your personal assistant for Keen Alise's portfolio. How can I help you?";
             } else if (message.includes("name")) {
-                return "The portfolio owner's name is Keen Alise.";
+                return "The portfolio owner's name is Prajwal Bhandari.";
             } else if (message.includes("about") || message.includes("who is keen alise")) {
                 return "Keen Alise is a passionate web developer with 2 years of experience. They specialize in creating intuitive, user-friendly websites and have a keen eye for design. Keen Alise is known for their problem-solving skills and ability to work well in team environments.";
             } else if (message.includes("education") || message.includes("degree")) {
-                return "Keen Alise holds a Bachelor's degree in Computer Science from XYZ University, graduated in 2021.";
+                return "Keen Alise is a Bachelor's student in Computer Science with from Coventry University, graduating in 2026.";
             } else if (message.includes("skills") || message.includes("technologies")) {
-                return "Keen Alise's skills include:\n• Front-end: HTML, CSS, JavaScript, React\n• Back-end: Node.js, Express, Python\n• Databases: MongoDB, MySQL\n• Other: Git, RESTful APIs, Responsive Design";
+                return "Keen Alise's skills include:\n• Front-end: HTML, CSS, JavaScript, \n• Databases: MySQL\n• Other: Git, GitHub, VS Code";
             } else if (message.includes("experience") || message.includes("work history")) {
-                return "Keen Alise has 2 years of professional experience, including:\n• Junior Web Developer at TechCorp (2021-2022)\n• Freelance Web Developer (2022-present)";
+                return "Keen Alise doesnot have a particular work experience but worked in different projects like library management system, chess game.• ";
             } else if (message.includes("project") || message.includes("portfolio")) {
-                return "Keen Alise has worked on several projects, including:\n1. E-commerce website for a local business\n2. Weather forecast app using React and OpenWeatherMap API\n3. Task management system with Node.js backend\nYou can find more details in the Projects section of the portfolio.";
+                return "Keen Alise has worked on several projects, including:\n1. Library Management System \n2. Chess game using tkinter\n3. Soduku Solver\nYou can find more details in the Projects section of the portfolio.";
             } else if (message.includes("contact") || message.includes("email")) {
                 return "You can contact Keen Alise via email at keenalise199@gmail.com.";
             } else if (message.includes("linkedin")) {
@@ -340,11 +340,11 @@
             } else if (message.includes("github")) {
                 return "You can find Keen Alise's GitHub profile at: https://github.com/keenalise";
             } else if (message.includes("cv") || message.includes("resume")) {
-                return "You can download Keen Alise's CV from the About section of the portfolio. It includes a detailed work history and list of skills.";
+                return "You can download Keen Alise's CV from the About section of the portfolio. It includes a keen alise's details and list of skills.";
             } else if (message.includes("joke")) {
                 return "Keen Alise's portfolio includes a Random Joke Generator. You can find it in the Projects section of the website!";
             } else if (message.includes("hobbies") || message.includes("interests")) {
-                return "Outside of coding, Keen Alise enjoys hiking, photography, and contributing to open-source projects.";
+                return "Outside of coding, Keen Alise enjoys hiking, photography, playing chess, watching football.";
             } else if (message.includes("languages")) {
                 return "Keen Alise is fluent in English, Nepali and Hindi .";
             } else {
