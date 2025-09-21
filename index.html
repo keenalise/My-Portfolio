@@ -245,8 +245,8 @@
                 </div>
                 <div class="project">
                     <h3>Chess</h3>
-                    <p>I made a chess game using tkinter. The user need to login inside the application.
-                        The login records are recorded in database using mysql.
+                    <p>I made a chess game in web. The user need to login inside the application.
+                        The records are stored in firebase. This app supports both google authorization and email-password authorization.
                     </p>
                 </div>
                 <div class="project">
@@ -260,14 +260,7 @@
                 </div>
             </section>
 
-            <section id="jokes">
-                <h2>Random Joke Generator</h2>
-                <div id="joke-container">
-                    <p id="joke-setup"></p>
-                    <p id="joke-punchline" style="display: none;"></p>
-                    <button id="joke-button">Get Joke</button>
-                </div>
-            </section>
+            
        
 
             <section id="contact">
@@ -277,20 +270,7 @@
                 <p>GitHub: <a href="https://github.com/keenalise" target="_blank">My GitHub Profile</a></p>
             </section>
 
-            Chatbot Section
-            <div id="chatbot-icon">💬</div>
-            <div id="chatbot" style="display: none;">
-                <div id="chatbot-header">
-                    Chat with us!
-                    <button id="minimize-button">-</button>
-                    <button id="delete-button">🗑️</button>
-                </div>
-                <div id="chatbot-messages"></div>
-                <div id="chatbot-input-area">
-                    <input type="text" id="chatbot-input" placeholder="Type a message...">
-                    <button id="chatbot-send">Send</button>
-                </div>
-            </div>
+            
         </main>
     </div>
 
@@ -298,138 +278,6 @@
         <p>&copy; 2023 Keen Alise. All rights reserved.</p>
     </footer>
 
-    <script>
-        // JavaScript to handle the minimize functionality
-        document.getElementById('chatbot-icon').addEventListener('click', function() {
-            document.getElementById('chatbot').style.display = 'flex';
-            document.getElementById('chatbot-icon').style.display = 'none';
-        });
-
-        document.getElementById('minimize-button').addEventListener('click', function() {
-            document.getElementById('chatbot').style.display = 'none';
-            document.getElementById('chatbot-icon').style.display = 'flex';
-        });
-
-        // Modify the event listener for the delete button
-        document.getElementById('delete-button').addEventListener('click', function() {
-            if (confirm("Are you sure you want to delete the entire conversation?")) {
-                document.getElementById('chatbot-messages').innerHTML = '';
-                document.getElementById('chatbot-input').value = ''; // Clear the input field as well
-            }
-        });
-
-        // Function to handle user input and generate bot response
-        function getBotResponse(message) {
-            message = message.toLowerCase();
-            
-            if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
-                return "Hello! I'm Vision, your personal assistant for Keen Alise's portfolio. How can I help you?";
-            } else if (message.includes("name")) {
-                return "The portfolio owner's name is Prajwal Bhandari.";
-            } else if (message.includes("about") || message.includes("who is keen alise")) {
-                return "Keen Alise is a passionate web developer with 2 years of experience. They specialize in creating intuitive, user-friendly websites and have a keen eye for design. Keen Alise is known for their problem-solving skills and ability to work well in team environments.";
-            } else if (message.includes("education") || message.includes("degree")) {
-                return "Keen Alise is a Bachelor's student in Computer Science with from Coventry University, graduating in 2026.";
-            } else if (message.includes("skills") || message.includes("technologies")) {
-                return "Keen Alise's skills include:\n• Front-end: HTML, CSS, JavaScript, \n• Databases: MySQL\n• Other: Git, GitHub, VS Code";
-            } else if (message.includes("experience") || message.includes("work history")) {
-                return "Keen Alise doesnot have a particular work experience but worked in different projects like library management system, chess game.• ";
-            } else if (message.includes("project") || message.includes("portfolio")) {
-                return "Keen Alise has worked on several projects, including:\n1. Library Management System \n2. Chess game using tkinter\n3. Soduku Solver\nYou can find more details in the Projects section of the portfolio.";
-            } else if (message.includes("contact") || message.includes("email")) {
-                return "You can contact Keen Alise via email at keenalise199@gmail.com.";
-            } else if (message.includes("linkedin")) {
-                return "You can find Keen Alise's LinkedIn profile at: https://www.linkedin.com/in/prajwal-bhandari-389031324/";
-            } else if (message.includes("github")) {
-                return "You can find Keen Alise's GitHub profile at: https://github.com/keenalise";
-            } else if (message.includes("cv") || message.includes("resume")) {
-                return "You can download Keen Alise's CV from the About section of the portfolio. It includes a keen alise's details and list of skills.";
-            } else if (message.includes("joke")) {
-                return "Keen Alise's portfolio includes a Random Joke Generator. You can find it in the Projects section of the website!";
-            } else if (message.includes("hobbies") || message.includes("interests")) {
-                return "Outside of coding, Keen Alise enjoys hiking, photography, playing chess, watching football.";
-            } else if (message.includes("languages")) {
-                return "Keen Alise is fluent in English, Nepali and Hindi .";
-            } else {
-                return "I'm sorry, but I couldn't find any information matching your query. Is there something else you'd like to know about Keen Alise or their portfolio?";
-            }
-        }
-
-        // Function to send message
-        function sendMessage() {
-            const userInput = document.getElementById('chatbot-input').value;
-            if (userInput.trim() !== "") {
-                addMessage('User', userInput);
-                document.getElementById('chatbot-input').value = "";
-                
-                setTimeout(() => {
-                    const botResponse = getBotResponse(userInput);
-                    addMessage('Bot', botResponse);
-                }, 1000);
-            }
-        }
-
-        // JavaScript to handle sending messages
-        document.getElementById('chatbot-send').addEventListener('click', sendMessage);
-
-        // Add event listener for the Enter key
-        document.getElementById('chatbot-input').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent default form submission
-                sendMessage();
-            }
-        });
-
-        // Modify the addMessage function
-        function addMessage(sender, message) {
-            const messageElement = document.createElement('div');
-            messageElement.textContent = message;
-            messageElement.classList.add('message');
-            messageElement.classList.add(sender === 'User' ? 'user-message' : 'bot-message');
-            document.getElementById('chatbot-messages').appendChild(messageElement);
-            document.getElementById('chatbot-messages').scrollTop = document.getElementById('chatbot-messages').scrollHeight;
-        }
-
-        // JavaScript to handle the joke button functionality
-        document.getElementById('joke-button').addEventListener('click', function() {
-            const jokeSetup = document.getElementById('joke-setup');
-            const jokePunchline = document.getElementById('joke-punchline');
-            const jokeButton = document.getElementById('joke-button');
-
-            // Fetch a random joke from the API
-            fetch('https://official-joke-api.appspot.com/random_joke')
-                .then(response => response.json())
-                .then(data => {
-                    jokeSetup.textContent = data.setup;
-                    jokePunchline.textContent = data.punchline;
-                    jokePunchline.style.display = 'none';
-                    jokeButton.textContent = 'Show Punchline';
-                    
-                    jokeButton.onclick = function() {
-                        if (jokePunchline.style.display === 'none') {
-                            jokeButton.disabled = true;
-                            jokeButton.textContent = 'Wait for it...';
-                            
-                            // Add a 3-second delay before showing the punchline
-                            setTimeout(() => {
-                                jokePunchline.style.display = 'block';
-                                jokeButton.textContent = 'Get New Joke';
-                                jokeButton.disabled = false;
-                            }, 3000);
-                        } else {
-                            // Fetch a new joke when "Get New Joke" is clicked
-                            jokeSetup.textContent = 'Loading...';
-                            jokePunchline.style.display = 'none';
-                            jokeButton.onclick = null;
-                            document.getElementById('joke-button').click();
-                        }
-                    };
-                })
-                .catch(error => {
-                    jokeSetup.textContent = 'Failed to fetch joke. Please try again.';
-                    jokePunchline.style.display = 'none';
-                });
-        });
-    </script>
+    
 </body>
 </html>
