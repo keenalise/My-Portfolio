@@ -6,278 +6,314 @@
     <title>Prajwal Bhandari - Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="keen-removebg-preview.png" type="image/x-icon">
-    <style>
-        /* Add this CSS for the sticky footer */
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        .content-wrapper {
-            flex: 1;
-        }
-        footer {
-            text-align: center;
-            padding: 2px 0; /* Shorten the footer size */
-            background-color: #f1f1f1;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            font-size: 12px; /* Adjust font size if needed */
-        }
-        #home {
-            background-image: url('channels4_banner.jpg'); /* Replace with your image path */
-            background-size: cover;
-            background-position: center;
-            color: white; /* Ensure text is readable */
-            text-align: center;
-            padding: 100px 0; /* Adjust padding as needed */
-        }
-        #home h1, #home p {
-            margin: 0;
-        }
-        /* Chatbot styles */
-        #chatbot {
-            width: 400px; /* Increase the width of the chatbot */
-            height: 600px; /* Increase the height of the chatbot */
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            bottom: 20px;
-            left: 20px; /* Position the chatbot on the left side */
-            z-index: 1000; /* Ensure the chatbot is above other elements */
-        }
-        #chatbot-header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #chatbot-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-        }
-        #chatbot-input {
-            border: none;
-            padding: 10px;
-            width: calc(100% - 60px);
-            box-sizing: border-box;
-        }
-        #chatbot-send {
-            border: none;
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-        }
-        #chatbot-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            cursor: pointer;
-            font-size: 24px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000; /* Ensure the icon is above other elements */
-        }
-        #minimize-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        /* Joke button*/
-        #joke-button {
-            z-index: 1000; /* Ensure the joke button is above other elements */
-            position: relative;
-        }
-        #delete-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-        #delete-button:hover {
-            color: #f1f1f1;
-        }
-
-        #chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: 400px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #chatbot-header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #chatbot-messages {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
-        #chatbot-input-area {
-            display: flex;
-            padding: 10px;
-        }
-
-        #chatbot-input {
-            flex-grow: 1;
-            margin-right: 5px;
-        }
-
-        .message {
-            max-width: 80%;
-            margin-bottom: 10px;
-            padding: 8px;
-            border-radius: 10px;
-        }
-
-        .user-message {
-            align-self: flex-end;
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .bot-message {
-            align-self: flex-start;
-            background-color: #e0e0e0;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+    </div>
+
+    <!-- Navigation -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <!-- <li><a href="#jokes">Jokes</a></li> -->
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">PB</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Add a wrapper around the main content -->
-    <div class="content-wrapper">
-        <main>
-            <section id="home">
-                <h1></h1>
-            </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="typing-animation" >Hello, I'm Prajwal Bhandari</span>
+                    </h1>
+                    <p class="hero-subtitle">Web Developer | Designer | Creative Thinker | AI Enthusiast</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="image.png" alt="Prajwal Bhandari" class="profile-hero-img">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
 
-            <section id="about">
-                <p class="centered-text">Web Developer | Designer | Creative Thinker | AI Enthusiast</p>
-                <h2>About Me</h2>
-                
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
                 <div class="about-content">
-                    <div class="profile-image-container">
-                        <img src="image.png" alt="Your Name" class="profile-image">
-                    </div>
                     <div class="about-text">
-                        <p>Hello! I'm Prajwal Bhandari, a passionate web developer with a keen eye for design and a love for creating intuitive, user-friendly websites as well as AI and Machine Learning. 
-                            I don't have any experience working with companies yet but am looking for internship to start new chapter of my life.</p>
-                        <p>My expertise includes front-end technologies like HTML, CSS, JavaScript, Python as well as C. I'm always eager to learn new technologies and stay up-to-date with the latest web development trends.</p>
-                        <p>When I'm not coding, you can find me exploring new hiking trails, playing chess, watching chess, experimenting with new recipes in the kitchen, or exploring the contents of books.</p>
-                        <a href="CV Prajwal.docx" download class="cv-download-btn">Download CV</a>
+                        <p class="about-description">
+                            Hello! I'm Prajwal Bhandari, a passionate web developer with a keen eye for design and a love for creating intuitive, user-friendly websites as well as AI and Machine Learning. I don't have any experience working with companies yet but am looking for internship to start new chapter of my life.
+                        </p>
+                        <p class="about-description">
+                            My expertise includes front-end technologies like HTML, CSS, JavaScript, Python as well as C. I'm always eager to learn new technologies and stay up-to-date with the latest web development trends.
+                        </p>
+                        <p class="about-description">
+                            When I'm not coding, you can find me exploring new hiking trails, playing chess, watching chess, experimenting with new recipes in the kitchen, or exploring the contents of books.
+                        </p>
+                        <a href="CV Prajwal.docx" download class="cv-download-btn">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">4</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">9</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">50</div>
+                            <div class="stat-label">Hours of Coding</div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>C</li>  
-                </ul>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3>Library Management System.</h3>
-                    <p>We used python's GUI "tkinter" to make a user friendly library management system 
-                    purpose. This project aims at making the task of library easy. It is a simple project that can be used by the librarian to maintain the records of the library.</p> 
-                    </p>
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="project">
-                    <h3>Chess</h3>
-                    <p>I made a chess game in web. The user need to login inside the application.
-                        The records are stored in firebase. This app supports both google authorization and email-password authorization.
-                    </p>
+                <div class="skills-grid">
+                    <div class="skill-card" data-skill="html">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="skill-name">HTML</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="css">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3 class="skill-name">CSS</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="java">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3 class="skill-name">Java</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="python">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="skill-name">Python</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="c">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-name">C</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="70%"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">
-                    <h3>Anime Recommendation System</h3>
-                    <p> I made a anime recommendation system using python.
-                        The system is based on the user's preferences and the anime's features.
-                        The system can also predict the ratings of new anime based on number of episodes, 
-                        anime type, expected members, genres.
-                        
-                    </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-line"></div>
                 </div>
-            </section>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Library Management System</h3>
+                            <p class="project-description">
+                                We used python's GUI "tkinter" to make a user friendly library management system. This project aims at making the task of library easy. It is a simple project that can be used by the librarian to maintain the records of the library.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Tkinter</span>
+                                <span class="tag">GUI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Chess Game</h3>
+                            <p class="project-description">
+                                I made a chess game in web. The user need to login inside the application. The records are stored in firebase. This app supports both google authorization and email-password authorization.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Authentication</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Anime Recommendation System</h3>
+                            <p class="project-description">
+                                I made an anime recommendation system using python. The system is based on the user's preferences and the anime's features. The system can also predict the ratings of new anime based on various parameters.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">ML</span>
+                                <span class="tag">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            
-       
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:keenalise199@gmail.com">keenalise199@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank">My LinkedIn Profile</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/keenalise" target="_blank">My GitHub Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form class="form">
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="mailto:keenalise199@gmail.com" target="_blank">keenalise199@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank">My LinkedIn Profile</a></p>
-                <p>GitHub: <a href="https://github.com/keenalise" target="_blank">My GitHub Profile</a></p>
-            </section>
-
-            
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Keen Alise. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Prajwal Bhandari. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/keenalise" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:keenalise199@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
