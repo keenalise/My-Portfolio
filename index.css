@@ -753,6 +753,18 @@ body:has(button:hover) .cursor { transform: translate(-50%, -50%) scale(2.5); }
     margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 2;
+}
+
+.project-link {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color var(--transition-fast);
+    position: relative;
+    z-index: 2;
 }
 
 .project-link {
