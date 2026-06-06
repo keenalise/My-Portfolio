@@ -3,317 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prajwal Bhandari - Portfolio</title>
+    <title>Prajwal Bhandari — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="keen-removebg-preview.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-    </div>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Noise overlay -->
+    <div class="noise"></div>
 
     <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <span class="logo-text">PB</span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+    <nav class="nav" id="nav">
+        <div class="nav-logo">PB</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
+            <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+            <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+            <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+            <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-text">PRAJWAL</div>
+        <div class="hero-inner">
+            <div class="hero-label">
+                <span class="label-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line" data-delay="0">Web</span>
+                <span class="hero-line accent" data-delay="100">Developer</span>
+                <span class="hero-line" data-delay="200">& Designer</span>
+            </h1>
+            <p class="hero-desc">
+                Building intuitive, beautiful experiences on the web.<br>
+                Kathmandu — crafting code with precision.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">
+                    <span>View Work</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#contact" class="btn-ghost">Say Hello</a>
+            </div>
+            <div class="hero-scroll-hint">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+        <div class="hero-image-col">
+            <div class="hero-img-wrap">
+                <img src="image.png" alt="Prajwal Bhandari" class="hero-img" onerror="this.style.display='none'">
+                <div class="hero-img-border"></div>
+                <div class="hero-img-tag">
+                    <span class="mono">01 — Portfolio 2025</span>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="typing-animation" >Hello, I'm Prajwal Bhandari</span>
-                    </h1>
-                    <p class="hero-subtitle">Web Developer | Designer | Creative Thinker | AI Enthusiast</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            View My Work
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-label reveal">
+                <span class="mono">02 — About</span>
+            </div>
+            <div class="about-grid">
+                <div class="about-left reveal-left">
+                    <h2 class="section-title">Crafting digital<br><em>experiences</em> that matter</h2>
+                </div>
+                <div class="about-right reveal-right">
+                    <p>Hello — I'm <strong>Prajwal Bhandari</strong>, a passionate web developer with a keen eye for design and a love for creating intuitive, user-friendly websites. Deeply interested in AI & Machine Learning.</p>
+                    <p>Currently seeking internship opportunities to begin a new chapter. My stack spans <strong>HTML, CSS, JavaScript, Python</strong> and C — always eager to learn what's next.</p>
+                    <p>Outside of code: hiking trails, chess boards, cookbooks, and good reads.</p>
+                    <a href="Prajwal'sResume.pdf" download class="btn-primary">
+                        <span>Download CV</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V11M8 11L4 7M8 11L12 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="stats-row reveal-up">
+                <div class="stat">
+                    <div class="stat-num" data-target="4">0</div>
+                    <div class="stat-label">Projects<br>Completed</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num" data-target="9">0</div>
+                    <div class="stat-label">Technologies<br>Mastered</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num" data-target="50">0</div>
+                    <div class="stat-label">Hours of<br>Coding</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-label reveal">
+                <span class="mono">03 — Skills</span>
+            </div>
+            <h2 class="section-title reveal">The toolkit</h2>
+            <div class="skills-list">
+                <div class="skill-item reveal-up" data-delay="0">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-pct mono">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="90"></div>
+                    </div>
+                    <p class="skill-note">Semantic markup, accessibility, structure</p>
+                </div>
+                <div class="skill-item reveal-up" data-delay="80">
+                    <div class="skill-header">
+                        <span class="skill-name">CSS</span>
+                        <span class="skill-pct mono">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="85"></div>
+                    </div>
+                    <p class="skill-note">Animations, layouts, responsive design</p>
+                </div>
+                <div class="skill-item reveal-up" data-delay="160">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-pct mono">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="80"></div>
+                    </div>
+                    <p class="skill-note">ML, data science, GUI development</p>
+                </div>
+                <div class="skill-item reveal-up" data-delay="240">
+                    <div class="skill-header">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-pct mono">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="75"></div>
+                    </div>
+                    <p class="skill-note">OOP, data structures, algorithms</p>
+                </div>
+                <div class="skill-item reveal-up" data-delay="320">
+                    <div class="skill-header">
+                        <span class="skill-name">C</span>
+                        <span class="skill-pct mono">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="70"></div>
+                    </div>
+                    <p class="skill-note">Systems, embedded, low-level programming</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-label reveal">
+                <span class="mono">04 — Projects</span>
+            </div>
+            <h2 class="section-title reveal">Selected work</h2>
+            <div class="projects-grid">
+
+                <div class="project-card reveal-up" data-delay="0">
+                    <div class="project-num mono">01</div>
+                    <div class="project-icon-wrap">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <h3 class="project-title">Library Management System</h3>
+                    <p class="project-desc">A user-friendly library management system built with Python's Tkinter GUI. Enables librarians to maintain and manage records efficiently.</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>Tkinter</span><span>GUI</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/keenalise" target="_blank" class="project-link mono">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" data-delay="100">
+                    <div class="project-num mono">02</div>
+                    <div class="project-icon-wrap">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+                    </div>
+                    <h3 class="project-title">Chess Game</h3>
+                    <p class="project-desc">A fully playable web chess game with Firebase backend, supporting both Google OAuth and email/password authentication for player accounts.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span><span>Firebase</span><span>Auth</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/keenalise" target="_blank" class="project-link mono">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" data-delay="200">
+                    <div class="project-num mono">03</div>
+                    <div class="project-icon-wrap">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <h3 class="project-title">Anime Recommendation System</h3>
+                    <p class="project-desc">ML-powered recommendation engine using user preferences and anime features. Predicts ratings for new titles based on multiple parameters.</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>ML</span><span>Data Science</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/keenalise" target="_blank" class="project-link mono">View on GitHub →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-label reveal">
+                <span class="mono">05 — Contact</span>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-left reveal-left">
+                    <h2 class="section-title">Let's build<br><em>something</em><br>together</h2>
+                    <p>Looking for internship opportunities. Open to collaboration, projects, and good conversations.</p>
+                    <div class="contact-links">
+                        <a href="mailto:keenalise199@gmail.com" class="contact-link">
+                            <span class="mono">Email</span>
+                            <span>keenalise199@gmail.com</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i>
-                            Get In Touch
+                        <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank" class="contact-link">
+                            <span class="mono">LinkedIn</span>
+                            <span>prajwal-bhandari</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </a>
+                        <a href="https://github.com/keenalise" target="_blank" class="contact-link">
+                            <span class="mono">GitHub</span>
+                            <span>keenalise</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="image.png" alt="Prajwal Bhandari" class="profile-hero-img">
-                        <div class="image-glow"></div>
-                    </div>
+                <div class="contact-right reveal-right">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-field">
+                            <label class="mono">Name</label>
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono">Email</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label class="mono">Message</label>
+                            <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            <span>Send Message</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p class="about-description">
-                            Hello! I'm Prajwal Bhandari, a passionate web developer with a keen eye for design and a love for creating intuitive, user-friendly websites as well as AI and Machine Learning. I don't have any experience working with companies yet but am looking for internship to start new chapter of my life.
-                        </p>
-                        <p class="about-description">
-                            My expertise includes front-end technologies like HTML, CSS, JavaScript, Python as well as C. I'm always eager to learn new technologies and stay up-to-date with the latest web development trends.
-                        </p>
-                        <p class="about-description">
-                            When I'm not coding, you can find me exploring new hiking trails, playing chess, watching chess, experimenting with new recipes in the kitchen, or exploring the contents of books.
-                        </p>
-                        <a href="Prajwal'sResume.pdf" download class="cv-download-btn">
-                            <i class="fas fa-download"></i>
-                            Download CV
-                        </a>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="15">4</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="5">9</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="100">50</div>
-                            <div class="stat-label">Hours of Coding</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-card" data-skill="html">
-                        <div class="skill-icon">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h3 class="skill-name">HTML</h3>
-                        <div class="skill-progress">
-                            <div class="progress-bar" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-skill="css">
-                        <div class="skill-icon">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <h3 class="skill-name">CSS</h3>
-                        <div class="skill-progress">
-                            <div class="progress-bar" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-skill="java">
-                        <div class="skill-icon">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <h3 class="skill-name">Java</h3>
-                        <div class="skill-progress">
-                            <div class="progress-bar" data-width="75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-skill="python">
-                        <div class="skill-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h3 class="skill-name">Python</h3>
-                        <div class="skill-progress">
-                            <div class="progress-bar" data-width="80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-skill="c">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="skill-name">C</h3>
-                        <div class="skill-progress">
-                            <div class="progress-bar" data-width="70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Projects</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Library Management System</h3>
-                            <p class="project-description">
-                                We used python's GUI "tkinter" to make a user friendly library management system. This project aims at making the task of library easy. It is a simple project that can be used by the librarian to maintain the records of the library.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Tkinter</span>
-                                <span class="tag">GUI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-chess"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Chess Game</h3>
-                            <p class="project-description">
-                                I made a chess game in web. The user need to login inside the application. The records are stored in firebase. This app supports both google authorization and email-password authorization.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Firebase</span>
-                                <span class="tag">Authentication</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Anime Recommendation System</h3>
-                            <p class="project-description">
-                                I made an anime recommendation system using python. The system is based on the user's preferences and the anime's features. The system can also predict the ratings of new anime based on various parameters.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">ML</span>
-                                <span class="tag">Data Science</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:keenalise199@gmail.com">keenalise199@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank">My LinkedIn Profile</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/keenalise" target="_blank">My GitHub Profile</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form class="form">
-                            <div class="form-group">
-                                <input type="text" class="form-input" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-input" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2023 Prajwal Bhandari. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://github.com/keenalise" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:keenalise199@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+            <div class="footer-inner">
+                <span class="mono">© 2025 Prajwal Bhandari</span>
+                <span class="mono footer-loc">📍 Kathmandu, Nepal</span>
+                <div class="footer-links">
+                    <a href="https://github.com/keenalise" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/prajwal-bhandari-389031324/" target="_blank">LI</a>
+                    <a href="mailto:keenalise199@gmail.com">EM</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
